@@ -10,7 +10,7 @@ def a_propos():
         st.write('Le projet naît d’une simple interrogation lors d’un cours à l’ESD entre deux étudiants, Yann Vanden Broeck et Lilou Roger : combien ai-je dépensé cette année sur Uber Eats ? C’est alors que nous nous sommes lancé le défi de trouver cette information ! ')
         st.write('Malheureusement sur l’application elle n’est pas accessible facilement. Pour cela nous avons utilisé les données Uber, accessibles grâce au droit d’accès offert par le RGPD et après quelques sueurs froides à la vue des montants astronomiques que nous avions dépensé, nous avons pris la décision de partager cette découverte à notre classe.')
         st.write('Le but de ce site codé avec Streamlit et Python est de rendre l’expérience accessible, afin que chaque personne puisse accéder et comprendre ses données de manière simple et concise. Ainsi cette expérience pourra mettre en garde notre classe et plus largement les étudiants de l’ESD face aux dangers des plateformes utilisant des modèles économiques basés sur des systèmes de micro-paiement. On espère une prise de conscience qui leur fera faire réduire leur consommation et leurs dépenses sur ce type d’application. Le fond est moralisateur mais volontairement emprunt de fun grâce au classement et au concours.')
-        st.write('Qui sommes-nous pour vous juger ? 😜')
+        st.write('Finalement, qui sommes-nous pour vous juger ? 😜')
     with col2:
         st.title('Vie privée')
         st.write(' ')
