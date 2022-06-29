@@ -10,14 +10,14 @@ st.set_page_config(layout="wide", page_title='UBER EAT')
 
 # Sidebar Intro
 las_file=None
-st.sidebar.write('# Dites bonjour à vos données UBER EAT 🚲')
-st.sidebar.write("Je travaille avec Yann le plus beau !")
+st.sidebar.write('# Dis bonjour à tes données UBER EATS 🚲')
+st.sidebar.write("Pour plus d'informations sur notre projet, n'hésite pas à te diriger sur l'onglet \"A propos\"")
 
 # Sidebar Navigation
 options = st.sidebar.radio('Parcourir :', 
-    ['Mes analyses', 'Classement', 'A propos'])
+    ['Mes données', 'Classement', 'A propos'])
 
-if options == 'Mes analyses':
+if options == 'Mes données':
     mes_analyses.mes_analyses()
 elif options == 'Classement':
     classement.classement()

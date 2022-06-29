@@ -17,19 +17,21 @@ def mes_analyses():
             """
     # Inject CSS with Markdown
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    # Corp du site
+    # Corps du site
 
-    st.title("YO")
+    st.title("Découvre tes données Uber Eats !")
 
     data_lilou = {}
 
-    uploaded_zip = st.file_uploader('Fichier ZIP', type="zip", help="ta maman")
+    uploaded_zip = st.file_uploader('Upload ton fichier ZIP dans l\'encadré en dessous !', type="zip")
 
     if (uploaded_zip is not None):
         #ok
         bjr, data_Firstname, data_Lastname = bonjour(uploaded_zip)
         st.title(bjr)
-        st.write("Voici un résumé sur vos données UBER EAT au global et sur l'année 2021")
+        st.write("Voici un résumé de tes données Uber Eats au global et sur l'année 2021 !")
+        st.write(" ")
+        st.write("Si tu souhaites participer au classement, clique le bouton ci-dessous :")
 
         dépense_TTC, moyenne_price, nb_commande, frais, dépense_TTC_2021, moyenne_price_2021, nb_commande_2021, frais_2021 = depense(uploaded_zip)
         top_5_restau, top_5_restau_2021, top_5_prod, top_5_prod_2021 = top5(uploaded_zip)
@@ -48,10 +50,10 @@ def mes_analyses():
             st.write("pour", nb_commande, "commandes,")
             st.write("avec une moyenne par commande de", moyenne_price,"€.")
             st.write('------------------------------------------')
-            st.subheader('Top 5 des restaurants')
+            st.subheader('Top 5 des restaurants les + commandés')
             st.table(top_5_restau.head())
             st.write('------------------------------------------')
-            st.subheader('Top 5 des produits')
+            st.subheader('Top 5 des produits les + commandés')
             st.table(top_5_prod.head())
 
         with col2:
@@ -61,17 +63,17 @@ def mes_analyses():
             st.write("pour", nb_commande_2021, "commandes,")
             st.write("avec une moyenne par commande de", moyenne_price_2021,"€.")
             st.write('------------------------------------------')
-            st.subheader('Top 5 des restaurants')
+            st.subheader('Top 5 des restaurants les + commandés en 2021')
             st.table(top_5_restau_2021.head())
             st.write('------------------------------------------')
-            st.subheader('Top 5 des produits')
+            st.subheader('Top 5 des produits les + commandés en 2021')
             st.table(top_5_prod_2021.head())
 
     else:
        st.info(
           f"""
-                👆 Pour avoir les analyses de tes données Uber Eat il faut au préalable les télécharger sur leur site.
-                ⚠️ Il y a un délais de minimum 24h pour les récupérer : [Faire la demande](https://auth.uber.com/login/?breeze_local_zone=dca1&next_url=https%3A%2F%2Fmyprivacy.uber.com%2Fprivacy%2Fexploreyourdata%2Fdownload%3F_ga%3D2.66157422.1551093104.1654689943-719198744.1652267294&state=1sYn0ZT-glUCeVIUaR0cUyziL8MvPBH4ab9tCMQKtX0%3D)
+                👆 Pour pouvoir accéder à l'analyse de tes données Uber Eats il faut au préalable les télécharger sur leur site.
+                ⚠️ Il y a un délai de minimum 24h pour les récupérer : [Faire la demande](https://auth.uber.com/login/?breeze_local_zone=dca1&next_url=https%3A%2F%2Fmyprivacy.uber.com%2Fprivacy%2Fexploreyourdata%2Fdownload%3F_ga%3D2.66157422.1551093104.1654689943-719198744.1652267294&state=1sYn0ZT-glUCeVIUaR0cUyziL8MvPBH4ab9tCMQKtX0%3D)
                 """
         )
 

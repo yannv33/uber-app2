@@ -9,6 +9,7 @@ from fonctions import scoring
 
 def classement():
     st.title('Classement')
+    st.write("Le classement est basé sur le montant dépensé en 2021 sur l'application Uber Eats.")
 
     #get necessary data for scoring function
     #bjr, data_Firstname, data_Lastname = bonjour(st.session_state.zip)
@@ -16,7 +17,7 @@ def classement():
     #classement = scoring(data_Firstname, data_Lastname, dépense_TTC_2021)
 
     classement = pd.read_csv('classement.csv', sep=",")
-
+    classement.index += 1
 
     st.table(classement)
 
